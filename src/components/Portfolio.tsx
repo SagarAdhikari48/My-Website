@@ -1,6 +1,6 @@
 'use client'
 
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { motion } from 'framer-motion'
 import Image from 'next/image'
 import { ExternalLink, Star, Code, Smartphone, ChevronLeft, ChevronRight } from 'lucide-react'
@@ -37,7 +37,7 @@ const Portfolio = () => {
       image: '/img/portfolio-1.jpg',
       description: 'Comprehensive medical appointment application with Blazor WebAssembly, provider registration, scheduling, and cross-platform support via .NET MAUI.',
       technologies: ['Blazor WebAssembly', 'ASP.NET Core 9', '.NET MAUI', 'Tailwind CSS'],
-      liveUrl: '#',
+      liveUrl: 'https://searchmed.com/',
       githubUrl: '#',
       featured: true
     },
@@ -45,10 +45,13 @@ const Portfolio = () => {
       id: 2,
       title: 'CustomerFiller - E-commerce Platform',
       category: 'web',
-      image: '/img/customfiller-portfolio.png',
+      images: [
+        '/img/customfiller-portfolio.png',
+        '/img/customfiller-portfolio-1.png'
+      ],
       description: 'Next.js e-commerce platform for aerosol filling solutions with Stripe payment integration and Supabase backend.',
       technologies: ['Next.js', 'Stripe', 'Supabase', 'TypeScript', 'Tailwind CSS'],
-      liveUrl: '#',
+      liveUrl: 'https://www.customfiller.com/',
       githubUrl: '#',
       featured: true
     },
@@ -74,7 +77,7 @@ const Portfolio = () => {
       image: '/img/jhigubazar-portfolio.png',
       description: 'Cross-platform marketplace with Ionic Angular web app, Node.js backend, and Capacitor for Android/iOS mobile apps.',
       technologies: ['Ionic Angular', 'Node.js', 'Express.js', 'Capacitor', 'MongoDB'],
-      liveUrl: 'https://www.jhigubazar.com',
+      liveUrl: 'https://www.jhigubazar.com/tabs/explore',
       githubUrl: '#',
       featured: true
     },
@@ -105,6 +108,17 @@ const Portfolio = () => {
   const filteredProjects = activeFilter === 'all' 
     ? projects 
     : projects.filter(project => project.category === activeFilter)
+
+  useEffect(() => {
+    projects.forEach(project => {
+      if (project.images && project.images.length > 1) {
+        project.images.forEach(imageSrc => {
+          const img = new window.Image()
+          img.src = imageSrc
+        })
+      }
+    })
+  }, [])
 
   return (
     <section id="portfolio" className="section-padding bg-white">
@@ -166,38 +180,57 @@ const Portfolio = () => {
                   {project.images ? (
                     // Multiple images with carousel
                     <>
-                      <Image
-                        src={project.images[currentImageIndex[project.id] || 0]}
-                        alt={`${project.title} - Image ${(currentImageIndex[project.id] || 0) + 1}`}
-                        width={400}
-                        height={256}
-                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                      />
+                      <div className="relative w-full h-full">
+                        <Image
+                          key={`${project.id}-${currentImageIndex[project.id] || 0}`}
+                          src={project.images[currentImageIndex[project.id] || 0]}
+                          alt={`${project.title} - Image ${(currentImageIndex[project.id] || 0) + 1}`}
+                          fill
+                          className="object-cover group-hover:scale-105 transition-transform duration-500"
+                          priority={project.featured && (currentImageIndex[project.id] || 0) === 0}
+                          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                          onError={(e) => {
+                            console.error(`Failed to load image: ${project.images![currentImageIndex[project.id] || 0]}`);
+                          }}
+                        />
+                      </div>
                       {project.images.length > 1 && (
                         <>
                           {/* Navigation buttons */}
                           <button
-                            onClick={() => prevImage(project.id, project.images!.length)}
-                            className="absolute left-2 top-1/2 -translate-y-1/2 w-8 h-8 bg-black/50 hover:bg-black/70 text-white rounded-full flex items-center justify-center transition-all duration-200 opacity-0 group-hover:opacity-100"
+                            onClick={(e) => {
+                              e.preventDefault();
+                              e.stopPropagation();
+                              prevImage(project.id, project.images!.length);
+                            }}
+                            className="absolute left-2 top-1/2 -translate-y-1/2 w-10 h-10 bg-black/60 hover:bg-black/80 text-white rounded-full flex items-center justify-center transition-all duration-200 z-10 shadow-lg"
                           >
-                            <ChevronLeft size={16} />
+                            <ChevronLeft size={20} />
                           </button>
                           <button
-                            onClick={() => nextImage(project.id, project.images!.length)}
-                            className="absolute right-2 top-1/2 -translate-y-1/2 w-8 h-8 bg-black/50 hover:bg-black/70 text-white rounded-full flex items-center justify-center transition-all duration-200 opacity-0 group-hover:opacity-100"
+                            onClick={(e) => {
+                              e.preventDefault();
+                              e.stopPropagation();
+                              nextImage(project.id, project.images!.length);
+                            }}
+                            className="absolute right-2 top-1/2 -translate-y-1/2 w-10 h-10 bg-black/60 hover:bg-black/80 text-white rounded-full flex items-center justify-center transition-all duration-200 z-10 shadow-lg"
                           >
-                            <ChevronRight size={16} />
+                            <ChevronRight size={20} />
                           </button>
                           {/* Image indicators */}
-                          <div className="absolute bottom-2 left-1/2 -translate-x-1/2 flex gap-1">
+                          <div className="absolute bottom-3 left-1/2 -translate-x-1/2 flex gap-2 z-10">
                             {project.images.map((_, idx) => (
                               <button
                                 key={idx}
-                                onClick={() => setCurrentImageIndex(prev => ({ ...prev, [project.id]: idx }))}
-                                className={`w-2 h-2 rounded-full transition-all duration-200 ${
+                                onClick={(e) => {
+                                  e.preventDefault();
+                                  e.stopPropagation();
+                                  setCurrentImageIndex(prev => ({ ...prev, [project.id]: idx }));
+                                }}
+                                className={`w-3 h-3 rounded-full transition-all duration-200 shadow-sm ${
                                   (currentImageIndex[project.id] || 0) === idx 
-                                    ? 'bg-white' 
-                                    : 'bg-white/50 hover:bg-white/75'
+                                    ? 'bg-white scale-110' 
+                                    : 'bg-white/60 hover:bg-white/80 hover:scale-105'
                                 }`}
                               />
                             ))}
@@ -207,13 +240,16 @@ const Portfolio = () => {
                     </>
                   ) : (
                     // Single image
-                    <Image
-                      src={project.image!}
-                      alt={project.title}
-                      width={400}
-                      height={256}
-                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                    />
+                    <div className="relative w-full h-full">
+                      <Image
+                        src={project.image!}
+                        alt={project.title}
+                        fill
+                        className="object-cover group-hover:scale-105 transition-transform duration-500"
+                        priority={project.featured}
+                        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                      />
+                    </div>
                   )}
                   {project.featured && (
                     <div className="absolute top-4 left-4 bg-blue-600 text-white px-3 py-1 rounded-full text-xs font-medium">

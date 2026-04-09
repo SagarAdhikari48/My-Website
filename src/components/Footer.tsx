@@ -128,8 +128,8 @@ const Footer = () => {
 
         {/* Bottom Section */}
         <div className="border-t border-slate-800 pt-8">
-          <div className="flex flex-col md:flex-row justify-between items-center gap-4">
-            <div className="flex items-center gap-2 text-slate-300 text-sm">
+          <div className="flex flex-col md:flex-row justify-center items-center gap-4">
+            {/* <div className="flex items-center gap-2 text-slate-300 text-sm">
               <span>Made with</span>
               <Heart size={16} className="text-red-500" />
               <span>and</span>
@@ -137,9 +137,9 @@ const Footer = () => {
               <span>using</span>
               <Code size={16} className="text-blue-400" />
               <span>Next.js & Tailwind CSS</span>
-            </div>
+            </div> */}
             
-            <div className="text-slate-400 text-sm">
+            <div className="text-slate-400 text-sm flex items-center gap-1">
               © 2024 Sagar Adhikari. All rights reserved.
             </div>
           </div>
