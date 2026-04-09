@@ -4,6 +4,8 @@ import { useState } from 'react'
 import { motion } from 'framer-motion'
 import { Mail, Phone, MapPin, Send, CheckCircle, MessageCircle, Clock, Globe } from 'lucide-react'
 import emailjs from '@emailjs/browser'
+import EmailPopup from './EmailPopup'
+import { useEmailPopup } from '@/hooks/useEmailPopup'
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -15,6 +17,7 @@ const Contact = () => {
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [isSubmitted, setIsSubmitted] = useState(false)
   const [error, setError] = useState('')
+  const { isEmailPopupOpen, openEmailPopup, closeEmailPopup } = useEmailPopup()
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     setFormData({
@@ -64,7 +67,8 @@ const Contact = () => {
       icon: Mail,
       title: 'Email',
       value: 'sagradhkr48@gmail.com',
-      link: 'mailto:sagradhkr48@gmail.com?subject=Hello%20Sagar&body=Hi%20Sagar,%0D%0A%0D%0AI%20would%20like%20to%20discuss%20a%20project%20with%20you.',
+      link: '#',
+      onClick: openEmailPopup,
       description: 'Send me an email'
     },
     {
@@ -166,12 +170,21 @@ const Contact = () => {
                     <div className="flex-1">
                       <h4 className="font-semibold text-slate-900 mb-1">{info.title}</h4>
                       <p className="text-sm text-slate-600 mb-2">{info.description}</p>
-                      <a 
-                        href={info.link}
-                        className="text-blue-600 hover:text-blue-700 font-medium transition-colors duration-200"
-                      >
-                        {info.value}
-                      </a>
+                      {info.onClick ? (
+                        <button 
+                          onClick={info.onClick}
+                          className="text-blue-600 hover:text-blue-700 font-medium transition-colors duration-200"
+                        >
+                          {info.value}
+                        </button>
+                      ) : (
+                        <a 
+                          href={info.link}
+                          className="text-blue-600 hover:text-blue-700 font-medium transition-colors duration-200"
+                        >
+                          {info.value}
+                        </a>
+                      )}
                     </div>
                   </div>
                 </motion.div>
@@ -301,6 +314,9 @@ const Contact = () => {
           </motion.div>
         </div>
       </div>
+
+      {/* Email Popup */}
+      <EmailPopup isOpen={isEmailPopupOpen} onClose={closeEmailPopup} />
     </section>
   )
 }

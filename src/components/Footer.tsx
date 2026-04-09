@@ -3,9 +3,12 @@
 import Link from 'next/link'
 import { ArrowUp, Mail, Github, Linkedin } from 'lucide-react'
 import { useState, useEffect } from 'react'
+import EmailPopup from './EmailPopup'
+import { useEmailPopup } from '@/hooks/useEmailPopup'
 
 const Footer = () => {
   const [showScrollTop, setShowScrollTop] = useState(false)
+  const { isEmailPopupOpen, openEmailPopup, closeEmailPopup } = useEmailPopup()
 
   useEffect(() => {
     const handleScroll = () => {
@@ -34,7 +37,8 @@ const Footer = () => {
     },
     {
       name: 'Email',
-      href: 'mailto:sagradhkr48@gmail.com?subject=Hello%20Sagar&body=Hi%20Sagar,%0D%0A%0D%0AI%20would%20like%20to%20discuss%20a%20project%20with%20you.',
+      href: '#',
+      onClick: openEmailPopup,
       icon: Mail,
       color: 'hover:text-green-400'
     }
@@ -65,16 +69,27 @@ const Footer = () => {
             
             <div className="flex items-center gap-4">
               {socialLinks.map((social) => (
-                <Link
-                  key={social.name}
-                  href={social.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className={`p-3 bg-slate-800 rounded-lg text-slate-300 ${social.color} transition-all duration-200 hover:bg-slate-700 hover:-translate-y-1`}
-                  aria-label={social.name}
-                >
-                  <social.icon size={20} />
-                </Link>
+                social.onClick ? (
+                  <button
+                    key={social.name}
+                    onClick={social.onClick}
+                    className={`p-3 bg-slate-800 rounded-lg text-slate-300 ${social.color} transition-all duration-200 hover:bg-slate-700 hover:-translate-y-1`}
+                    aria-label={social.name}
+                  >
+                    <social.icon size={20} />
+                  </button>
+                ) : (
+                  <Link
+                    key={social.name}
+                    href={social.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className={`p-3 bg-slate-800 rounded-lg text-slate-300 ${social.color} transition-all duration-200 hover:bg-slate-700 hover:-translate-y-1`}
+                    aria-label={social.name}
+                  >
+                    <social.icon size={20} />
+                  </Link>
+                )
               ))}
             </div>
           </div>
@@ -102,13 +117,13 @@ const Footer = () => {
             <div className="space-y-4 text-sm">
               <div className="text-slate-300">
                 <div className="font-medium text-white mb-1">Email</div>
-                <Link 
-                  href="mailto:sagradhkr48@gmail.com?subject=Hello%20Sagar&body=Hi%20Sagar,%0D%0A%0D%0AI%20would%20like%20to%20discuss%20a%20project%20with%20you."
+                <button 
+                  onClick={openEmailPopup}
                   className="hover:text-blue-400 transition-colors duration-200"
                   title="Send email to Sagar Adhikari"
                 >
                   sagradhkr48@gmail.com
-                </Link>
+                </button>
               </div>
               <div className="text-slate-300">
                 <div className="font-medium text-white mb-1">Phone</div>
@@ -157,6 +172,9 @@ const Footer = () => {
           <ArrowUp size={20} />
         </button>
       )}
+
+      {/* Email Popup */}
+      <EmailPopup isOpen={isEmailPopupOpen} onClose={closeEmailPopup} />
     </footer>
   )
 }

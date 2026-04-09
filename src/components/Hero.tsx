@@ -12,12 +12,15 @@ import {
   Github,
   Linkedin,
 } from "lucide-react";
+import EmailPopup from "./EmailPopup";
+import { useEmailPopup } from "@/hooks/useEmailPopup";
 
 const Hero = () => {
   const [currentText, setCurrentText] = useState("");
   const [currentIndex, setCurrentIndex] = useState(0);
   const [charIndex, setCharIndex] = useState(0);
   const [isDeleting, setIsDeleting] = useState(false);
+  const { isEmailPopupOpen, openEmailPopup, closeEmailPopup } = useEmailPopup();
 
   const texts = [
     "Software Engineer",
@@ -132,14 +135,14 @@ const Hero = () => {
                 <Mail size={18} />
                 Contact Me
               </Link>
-              <Link 
-                href="mailto:sagradhkr48@gmail.com?subject=Hello%20Sagar&body=Hi%20Sagar,%0D%0A%0D%0AI%20would%20like%20to%20discuss%20a%20project%20with%20you."
+              <button 
+                onClick={openEmailPopup}
                 className="btn-outline"
                 title="Send direct email"
               >
                 <Mail size={18} />
                 Email Now
-              </Link>
+              </button>
             </motion.div>
 
             <motion.div
@@ -166,14 +169,14 @@ const Hero = () => {
               >
                 <Github size={20} />
               </Link>
-              <Link
-                href="mailto:sagradhkr48@gmail.com?subject=Hello%20Sagar&body=Hi%20Sagar,%0D%0A%0D%0AI%20would%20like%20to%20discuss%20a%20project%20with%20you."
+              <button
+                onClick={openEmailPopup}
                 className="p-3 bg-white rounded-lg shadow-sm border border-gray-100 text-slate-600 hover:text-green-600 hover:shadow-md transition-all duration-200"
                 aria-label="Email Sagar Adhikari"
                 title="Send email to Sagar Adhikari"
               >
                 <Mail size={20} />
-              </Link>
+              </button>
             </motion.div>
 
             {/* Quick Info */}
@@ -224,6 +227,9 @@ const Hero = () => {
           </motion.div>
         </div>
       </div>
+
+      {/* Email Popup */}
+      <EmailPopup isOpen={isEmailPopupOpen} onClose={closeEmailPopup} />
     </section>
   );
 };
