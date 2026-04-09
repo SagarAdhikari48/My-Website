@@ -56,6 +56,7 @@ const About = () => {
             viewport={{ once: true }}
             className="space-y-8"
           >
+            
             <div className="space-y-6">
               <p className="text-large text-slate-600 leading-relaxed">
                 Software Developer with 7+ years of experience in designing, developing, and testing various
