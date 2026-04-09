@@ -64,7 +64,7 @@ const Contact = () => {
       icon: Mail,
       title: 'Email',
       value: 'sagradhkr48@gmail.com',
-      link: 'mailto:sagradhkr48@gmail.com',
+      link: 'mailto:sagradhkr48@gmail.com?subject=Hello%20Sagar&body=Hi%20Sagar,%0D%0A%0D%0AI%20would%20like%20to%20discuss%20a%20project%20with%20you.',
       description: 'Send me an email'
     },
     {

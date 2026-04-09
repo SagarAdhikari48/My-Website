@@ -34,6 +34,7 @@ const Skills = () => {
       skills: [
         { name: 'Supabase', percentage: 85 },
         { name: 'MongoDB', percentage: 85 },
+        { name: 'PostgreSQL', percentage: 82 },
         { name: 'MySQL/MSSQL', percentage: 88 },
         { name: 'Git/GitHub', percentage: 92 },
         { name: 'Stripe Integration', percentage: 80 },
@@ -126,7 +127,7 @@ const Skills = () => {
           <h3 className="text-lg font-semibold text-slate-900 mb-6">Additional Technologies</h3>
           <div className="flex flex-wrap justify-center gap-3">
             {[
-              'Blazor Server', 'Ionic', 'Capacitor', 'Express.js', 'Angular Material', 'PrimeNG', 'Bootstrap', 'SCSS', 
+              'Blazor Server', 'Ionic', 'Capacitor', 'Electron', 'Express.js', 'Angular Material', 'PrimeNG', 'Bootstrap', 'SCSS', 
               'Webpack', 'Vite', 'GitHub Projects', 'Agile Development', 'Figma', 'Cypress'
             ].map((tech, index) => (
               <motion.span

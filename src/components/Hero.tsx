@@ -5,8 +5,6 @@ import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import {
-  ExternalLink,
-  Play,
   Download,
   Mail,
   MapPin,
@@ -134,6 +132,14 @@ const Hero = () => {
                 <Mail size={18} />
                 Contact Me
               </Link>
+              <Link 
+                href="mailto:sagradhkr48@gmail.com?subject=Hello%20Sagar&body=Hi%20Sagar,%0D%0A%0D%0AI%20would%20like%20to%20discuss%20a%20project%20with%20you."
+                className="btn-outline"
+                title="Send direct email"
+              >
+                <Mail size={18} />
+                Email Now
+              </Link>
             </motion.div>
 
             <motion.div
@@ -161,9 +167,10 @@ const Hero = () => {
                 <Github size={20} />
               </Link>
               <Link
-                href="mailto:sagradhkr48@gmail.com"
+                href="mailto:sagradhkr48@gmail.com?subject=Hello%20Sagar&body=Hi%20Sagar,%0D%0A%0D%0AI%20would%20like%20to%20discuss%20a%20project%20with%20you."
                 className="p-3 bg-white rounded-lg shadow-sm border border-gray-100 text-slate-600 hover:text-green-600 hover:shadow-md transition-all duration-200"
                 aria-label="Email Sagar Adhikari"
+                title="Send email to Sagar Adhikari"
               >
                 <Mail size={20} />
               </Link>

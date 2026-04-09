@@ -94,6 +94,35 @@ const Experience = () => {
         'Implemented state management and real-time data synchronization'
       ],
       technologies: ['Angular', 'Electron', 'NgRx', 'TypeScript']
+    },
+    {
+      title: 'Frontend Developer',
+      company: 'Nirekha Dot Com Private Limited',
+      location: 'Onsite',
+      period: 'October 2018 - October 2019',
+      website: '#',
+      description: [
+        'Developed Angular-based business registration application for government offices',
+        'Created desktop application using Electron for offline functionality',
+        'Successfully deployed and installed desktop applications in different wards of Roshi Municipality government offices',
+        'Built comprehensive complaint handling system for Nepal Telecommunications Authority (NTA) operations',
+        'Developed web application for internet speed testing for Nepal Telecommunications Authority (NTA)'
+      ],
+      technologies: ['Angular', 'Electron', 'TypeScript', 'Desktop Applications', 'Government Systems']
+    },
+    {
+      title: 'Full Stack Developer (Intern)',
+      company: 'Channakya Software Pvt Ltd.',
+      location: 'Onsite',
+      period: 'August 2018 - October 2018',
+      website: '#',
+      description: [
+        'Completed internship as Full Stack Developer working with Angular frontend and Node.js backend',
+        'Developed Visitor Management System using Angular for frontend and Node.js for backend APIs',
+        'Gained hands-on experience with PostgreSQL database design and management',
+        'Learned full-stack development practices and modern web development workflows'
+      ],
+      technologies: ['Angular', 'Node.js', 'PostgreSQL', 'Express.js', 'TypeScript', 'Full Stack Development']
     }
   ]
 

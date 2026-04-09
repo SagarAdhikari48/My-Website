@@ -1,7 +1,7 @@
 'use client'
 
 import Link from 'next/link'
-import { ExternalLink, ArrowUp, Mail, Heart, Code, Coffee, Github, Linkedin } from 'lucide-react'
+import { ArrowUp, Mail, Github, Linkedin } from 'lucide-react'
 import { useState, useEffect } from 'react'
 
 const Footer = () => {
@@ -34,7 +34,7 @@ const Footer = () => {
     },
     {
       name: 'Email',
-      href: 'mailto:sagradhkr48@gmail.com',
+      href: 'mailto:sagradhkr48@gmail.com?subject=Hello%20Sagar&body=Hi%20Sagar,%0D%0A%0D%0AI%20would%20like%20to%20discuss%20a%20project%20with%20you.',
       icon: Mail,
       color: 'hover:text-green-400'
     }
@@ -103,8 +103,9 @@ const Footer = () => {
               <div className="text-slate-300">
                 <div className="font-medium text-white mb-1">Email</div>
                 <Link 
-                  href="mailto:sagradhkr48@gmail.com"
+                  href="mailto:sagradhkr48@gmail.com?subject=Hello%20Sagar&body=Hi%20Sagar,%0D%0A%0D%0AI%20would%20like%20to%20discuss%20a%20project%20with%20you."
                   className="hover:text-blue-400 transition-colors duration-200"
+                  title="Send email to Sagar Adhikari"
                 >
                   sagradhkr48@gmail.com
                 </Link>
