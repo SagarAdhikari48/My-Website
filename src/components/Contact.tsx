@@ -93,7 +93,7 @@ const Contact = () => {
   const quickStats = [
     { icon: MessageCircle, label: 'Projects Completed', value: '50+' },
     { icon: Globe, label: 'Happy Clients', value: '30+' },
-    { icon: Clock, label: 'Years Experience', value: '6+' }
+    { icon: Clock, label: 'Years Experience', value: '7+' }
   ]
 
   return (

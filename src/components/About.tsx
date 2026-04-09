@@ -8,7 +8,7 @@ const About = () => {
     { icon: User, label: 'Name', value: 'Sagar Adhikari' },
     { icon: Calendar, label: 'Birthday', value: '27 July 1993' },
     { icon: Award, label: 'Degree', value: 'Bachelor in Computer Engineering' },
-    { icon: Briefcase, label: 'Experience', value: '6+ Years' },
+    { icon: Briefcase, label: 'Experience', value: '7+ Years' },
     { icon: Phone, label: 'Phone', value: '+977 9843650962' },
     { icon: Mail, label: 'Email', value: 'sagradhkr48@gmail.com' },
     { icon: MapPin, label: 'Address', value: 'Kathmandu, Nepal' },

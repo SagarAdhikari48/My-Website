@@ -11,7 +11,7 @@ const inter = Inter({
 
 export const metadata: Metadata = {
   title: 'Sagar Adhikari - Official Website | Software Engineer & Full Stack Developer',
-  description: 'Sagar Adhikari is an experienced Software Engineer and Full Stack Developer from Nepal with 6+ years of expertise in Node.js, React, Angular, Vue.js. Visit Sagar Adhikari\'s official portfolio website.',
+  description: 'Sagar Adhikari is an experienced Software Engineer and Full Stack Developer from Nepal with 7+ years of expertise in Node.js, React, Angular, Vue.js. Visit Sagar Adhikari\'s official portfolio website.',
   keywords: [
     'Sagar Adhikari',
     'Sagar Adhikari Nepal',
@@ -75,7 +75,7 @@ export const metadata: Metadata = {
     locale: 'en_US',
     url: 'https://www.sagaradhikari.info.np/',
     title: 'Sagar Adhikari - Official Website | Software Engineer & Full Stack Developer',
-    description: 'Sagar Adhikari is an experienced Software Engineer and Full Stack Developer from Nepal with 6+ years of expertise in Node.js, React, Angular, Vue.js.',
+    description: 'Sagar Adhikari is an experienced Software Engineer and Full Stack Developer from Nepal with 7+ years of expertise in Node.js, React, Angular, Vue.js.',
     siteName: 'Sagar Adhikari - Official Portfolio Website',
     images: [
       {
@@ -89,7 +89,7 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     title: 'Sagar Adhikari - Official Website | Software Engineer & Full Stack Developer',
-    description: 'Sagar Adhikari is an experienced Software Engineer and Full Stack Developer from Nepal with 6+ years of expertise in Node.js, React, Angular, Vue.js.',
+    description: 'Sagar Adhikari is an experienced Software Engineer and Full Stack Developer from Nepal with 7+ years of expertise in Node.js, React, Angular, Vue.js.',
     images: ['https://www.sagaradhikari.info.np/img/profileImage.jpg'],
     creator: '@sagar_adhikari',
   },
@@ -117,7 +117,7 @@ export default function RootLayout({
     "name": "Sagar Adhikari",
     "alternateName": ["Sagar Adhikari Nepal", "Sagar Adhikari Software Engineer"],
     "jobTitle": "Software Engineer & Full Stack Developer",
-    "description": "Sagar Adhikari is an experienced Software Engineer and Full Stack Developer from Nepal with 6+ years of expertise in web development, specializing in Node.js, React, Angular, and Vue.js technologies.",
+    "description": "Sagar Adhikari is an experienced Software Engineer and Full Stack Developer from Nepal with 7+ years of expertise in web development, specializing in Node.js, React, Angular, and Vue.js technologies.",
     "url": "https://www.sagaradhikari.info.np/",
     "image": {
       "@type": "ImageObject",
@@ -196,7 +196,7 @@ export default function RootLayout({
       "name": "Software Engineering Education"
     },
     "award": [
-      "6+ Years Experience in Software Development",
+      "7+ Years Experience in Software Development",
       "Full Stack Web Development Expertise",
       "Multiple Successful Project Deliveries"
     ]
