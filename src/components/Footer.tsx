@@ -58,7 +58,7 @@ const Footer = () => {
             <div>
               <h3 className="text-2xl font-bold text-white mb-4">Sagar Adhikari</h3>
               <p className="text-slate-300 leading-relaxed max-w-md">
-                Software Developer with 6+ years of experience in creating innovative web solutions. 
+                Software Developer with 7+ years of experience in creating innovative web solutions. 
                 Passionate about clean code, user experience, and continuous learning.
               </p>
             </div>

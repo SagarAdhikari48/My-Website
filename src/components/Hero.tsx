@@ -1,46 +1,59 @@
-'use client'
+"use client";
 
-import { useState, useEffect } from 'react'
-import Image from 'next/image'
-import Link from 'next/link'
-import { motion } from 'framer-motion'
-import { ExternalLink, Play, Download, Mail, MapPin, Phone } from 'lucide-react'
+import { useState, useEffect } from "react";
+import Image from "next/image";
+import Link from "next/link";
+import { motion } from "framer-motion";
+import {
+  ExternalLink,
+  Play,
+  Download,
+  Mail,
+  MapPin,
+  Phone,
+} from "lucide-react";
 
 const Hero = () => {
-  const [currentText, setCurrentText] = useState('')
-  const [currentIndex, setCurrentIndex] = useState(0)
-  const [charIndex, setCharIndex] = useState(0)
-  const [isDeleting, setIsDeleting] = useState(false)
+  const [currentText, setCurrentText] = useState("");
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const [charIndex, setCharIndex] = useState(0);
+  const [isDeleting, setIsDeleting] = useState(false);
 
   const texts = [
-    'Software Engineer',
-    'Frontend Developer',
-    'Backend Developer', 
-    'Full Stack Developer',
-    'Web Developer'
-  ]
+    "Software Engineer",
+    "Frontend Developer",
+    "Backend Developer",
+    "Full Stack Developer",
+    "Web Developer",
+  ];
 
   useEffect(() => {
-    const timeout = setTimeout(() => {
-      if (!isDeleting && charIndex < texts[currentIndex].length) {
-        setCurrentText(texts[currentIndex].substring(0, charIndex + 1))
-        setCharIndex(charIndex + 1)
-      } else if (isDeleting && charIndex > 0) {
-        setCurrentText(texts[currentIndex].substring(0, charIndex - 1))
-        setCharIndex(charIndex - 1)
-      } else if (!isDeleting && charIndex === texts[currentIndex].length) {
-        setTimeout(() => setIsDeleting(true), 2000)
-      } else if (isDeleting && charIndex === 0) {
-        setIsDeleting(false)
-        setCurrentIndex((currentIndex + 1) % texts.length)
-      }
-    }, isDeleting ? 50 : 100)
+    const timeout = setTimeout(
+      () => {
+        if (!isDeleting && charIndex < texts[currentIndex].length) {
+          setCurrentText(texts[currentIndex].substring(0, charIndex + 1));
+          setCharIndex(charIndex + 1);
+        } else if (isDeleting && charIndex > 0) {
+          setCurrentText(texts[currentIndex].substring(0, charIndex - 1));
+          setCharIndex(charIndex - 1);
+        } else if (!isDeleting && charIndex === texts[currentIndex].length) {
+          setTimeout(() => setIsDeleting(true), 2000);
+        } else if (isDeleting && charIndex === 0) {
+          setIsDeleting(false);
+          setCurrentIndex((currentIndex + 1) % texts.length);
+        }
+      },
+      isDeleting ? 50 : 100,
+    );
 
-    return () => clearTimeout(timeout)
-  }, [charIndex, currentIndex, isDeleting, texts])
+    return () => clearTimeout(timeout);
+  }, [charIndex, currentIndex, isDeleting, texts]);
 
   return (
-    <section id="home" className="min-h-screen flex items-center bg-gradient-to-br from-slate-50 to-blue-50/30 pt-16">
+    <section
+      id="home"
+      className="min-h-screen flex items-center bg-gradient-to-br from-slate-50 to-blue-50/30 pt-16"
+    >
       <div className="container">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
           {/* Left side - Text content */}
@@ -60,8 +73,8 @@ const Hero = () => {
                 <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
                 Available for work
               </motion.div>
-              
-              <motion.h1 
+
+              <motion.h1
                 className="heading-1 text-slate-900"
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
@@ -69,7 +82,7 @@ const Hero = () => {
               >
                 Hi, I'm <span className="text-blue-600">Sagar Adhikari</span>
               </motion.h1>
-              
+
               <div className="h-16 flex items-center">
                 <span className="text-xl sm:text-2xl lg:text-3xl font-medium text-slate-600">
                   {currentText}
@@ -78,62 +91,67 @@ const Hero = () => {
               </div>
             </div>
 
-            <motion.p 
+            <motion.p
               className="text-large text-slate-600 max-w-2xl"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.4 }}
             >
-              Software Developer with 6+ years of experience specializing in modern web technologies including 
-              Blazor, ASP.NET Core, React, and Vue.js. Expert in building comprehensive full-stack solutions 
-              from medical applications to e-commerce platforms.
+              Results-driven Full Stack Software Engineer with 7+ years of
+              proven expertise in architecting, developing, and deploying
+              scalable web applications across healthcare, e-commerce, and
+              enterprise domains. Specialized in modern technologies including
+              Blazor WebAssembly, ASP.NET Core, Angular, and Vue.js with
+              demonstrated success in crossplatform development using .NET MAUI.
+              Expert in building robust APIs, implementing secure payment
+              systems, and delivering high-performance applications that serve
+              thousands of users. Passionate about leveraging cutting-edge
+              technologies to solve complex business challenges and drive
+              digital transformation initiatives.
             </motion.p>
 
-            <motion.div 
+            <motion.div
               className="flex flex-col sm:flex-row gap-4"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.5 }}
             >
-              <Link 
-                href="/pdf/Sagar_Adhikari.pdf" 
+              <Link
+                href="/pdf/Sagar_Adhikari.pdf"
                 download
                 className="btn-primary"
               >
                 <Download size={18} />
                 Download CV
               </Link>
-              <Link 
-                href="#contact" 
-                className="btn-secondary"
-              >
+              <Link href="#contact" className="btn-secondary">
                 <Mail size={18} />
                 Contact Me
               </Link>
             </motion.div>
 
-            <motion.div 
+            <motion.div
               className="flex items-center gap-6"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.6 }}
             >
-              <Link 
-                href="https://www.linkedin.com/in/sagaradhikari48" 
+              <Link
+                href="https://www.linkedin.com/in/sagaradhikari48"
                 target="_blank"
                 className="p-3 bg-white rounded-lg shadow-sm border border-gray-100 text-slate-600 hover:text-blue-600 hover:shadow-md transition-all duration-200"
               >
                 <ExternalLink size={20} />
               </Link>
-              <Link 
-                href="https://github.com/Sagar-Adhikari?tab=repositories" 
+              <Link
+                href="https://github.com/Sagar-Adhikari?tab=repositories"
                 target="_blank"
                 className="p-3 bg-white rounded-lg shadow-sm border border-gray-100 text-slate-600 hover:text-blue-600 hover:shadow-md transition-all duration-200"
               >
                 <ExternalLink size={20} />
               </Link>
-              <Link 
-                href="#" 
+              <Link
+                href="#"
                 className="p-3 bg-white rounded-lg shadow-sm border border-gray-100 text-slate-600 hover:text-blue-600 hover:shadow-md transition-all duration-200"
               >
                 <Play size={20} />
@@ -141,7 +159,7 @@ const Hero = () => {
             </motion.div>
 
             {/* Quick Info */}
-            <motion.div 
+            <motion.div
               className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-4"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
@@ -180,14 +198,16 @@ const Hero = () => {
                 </div>
               </div>
               <div className="absolute -bottom-4 -right-4 bg-blue-600 text-white px-4 py-2 rounded-xl shadow-lg">
-                <span className="font-semibold text-sm">6+ Years Experience</span>
+                <span className="font-semibold text-sm">
+                  6+ Years Experience
+                </span>
               </div>
             </div>
           </motion.div>
         </div>
       </div>
     </section>
-  )
-}
+  );
+};
 
-export default Hero
+export default Hero;

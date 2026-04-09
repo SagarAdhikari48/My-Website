@@ -58,7 +58,7 @@ const About = () => {
           >
             <div className="space-y-6">
               <p className="text-large text-slate-600 leading-relaxed">
-                Software Developer with 6+ years of experience in designing, developing, and testing various
+                Software Developer with 7+ years of experience in designing, developing, and testing various
                 applications. Proficient in front-end and back-end web development, seeking to enhance
                 my professional experience in a teamwork-oriented software company.
               </p>
