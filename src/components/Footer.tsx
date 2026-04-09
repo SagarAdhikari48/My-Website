@@ -1,7 +1,7 @@
 'use client'
 
 import Link from 'next/link'
-import { ExternalLink, ArrowUp, Mail, Heart, Code, Coffee } from 'lucide-react'
+import { ExternalLink, ArrowUp, Mail, Heart, Code, Coffee, Github, Linkedin } from 'lucide-react'
 import { useState, useEffect } from 'react'
 
 const Footer = () => {
@@ -22,21 +22,21 @@ const Footer = () => {
   const socialLinks = [
     {
       name: 'LinkedIn',
-      href: 'https://www.linkedin.com/in/sagaradhikari48',
-      icon: ExternalLink,
+      href: 'https://www.linkedin.com/in/sagaradhikari48/',
+      icon: Linkedin,
       color: 'hover:text-blue-600'
     },
     {
       name: 'GitHub',
-      href: 'https://github.com/Sagar-Adhikari?tab=repositories',
-      icon: ExternalLink,
-      color: 'hover:text-slate-900'
+      href: 'https://github.com/Sagar-Adhikari',
+      icon: Github,
+      color: 'hover:text-slate-300'
     },
     {
       name: 'Email',
       href: 'mailto:sagradhkr48@gmail.com',
       icon: Mail,
-      color: 'hover:text-blue-600'
+      color: 'hover:text-green-400'
     }
   ]
 

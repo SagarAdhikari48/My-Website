@@ -11,6 +11,8 @@ import {
   Mail,
   MapPin,
   Phone,
+  Github,
+  Linkedin,
 } from "lucide-react";
 
 const Hero = () => {
@@ -81,6 +83,10 @@ const Hero = () => {
                 transition={{ delay: 0.3 }}
               >
                 Hi, I'm <span className="text-blue-600">Sagar Adhikari</span>
+                <br />
+                <span className="text-2xl sm:text-3xl lg:text-4xl font-normal text-slate-700">
+                  Software Engineer from Nepal
+                </span>
               </motion.h1>
 
               <div className="h-16 flex items-center">
@@ -137,24 +143,29 @@ const Hero = () => {
               transition={{ delay: 0.6 }}
             >
               <Link
-                href="https://www.linkedin.com/in/sagaradhikari48"
+                href="https://www.linkedin.com/in/sagaradhikari48/"
                 target="_blank"
+                rel="noopener noreferrer"
                 className="p-3 bg-white rounded-lg shadow-sm border border-gray-100 text-slate-600 hover:text-blue-600 hover:shadow-md transition-all duration-200"
+                aria-label="Sagar Adhikari LinkedIn Profile"
               >
-                <ExternalLink size={20} />
+                <Linkedin size={20} />
               </Link>
               <Link
-                href="https://github.com/Sagar-Adhikari?tab=repositories"
+                href="https://github.com/Sagar-Adhikari"
                 target="_blank"
-                className="p-3 bg-white rounded-lg shadow-sm border border-gray-100 text-slate-600 hover:text-blue-600 hover:shadow-md transition-all duration-200"
+                rel="noopener noreferrer"
+                className="p-3 bg-white rounded-lg shadow-sm border border-gray-100 text-slate-600 hover:text-slate-900 hover:shadow-md transition-all duration-200"
+                aria-label="Sagar Adhikari GitHub Profile"
               >
-                <ExternalLink size={20} />
+                <Github size={20} />
               </Link>
               <Link
-                href="#"
-                className="p-3 bg-white rounded-lg shadow-sm border border-gray-100 text-slate-600 hover:text-blue-600 hover:shadow-md transition-all duration-200"
+                href="mailto:sagradhkr48@gmail.com"
+                className="p-3 bg-white rounded-lg shadow-sm border border-gray-100 text-slate-600 hover:text-green-600 hover:shadow-md transition-all duration-200"
+                aria-label="Email Sagar Adhikari"
               >
-                <Play size={20} />
+                <Mail size={20} />
               </Link>
             </motion.div>
 

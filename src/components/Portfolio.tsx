@@ -112,8 +112,14 @@ const Portfolio = () => {
   useEffect(() => {
     projects.forEach(project => {
       if (project.images && project.images.length > 1) {
-        project.images.forEach(imageSrc => {
+        project.images.forEach((imageSrc, index) => {
           const img = new window.Image()
+          img.onload = () => {
+            console.log(`✅ Preloaded: ${imageSrc}`)
+          }
+          img.onerror = () => {
+            console.warn(`❌ Failed to preload: ${imageSrc}`)
+          }
           img.src = imageSrc
         })
       }
@@ -190,7 +196,11 @@ const Portfolio = () => {
                           priority={project.featured && (currentImageIndex[project.id] || 0) === 0}
                           sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                           onError={(e) => {
-                            console.error(`Failed to load image: ${project.images![currentImageIndex[project.id] || 0]}`);
+                            console.warn(`Image failed to load: ${project.images![currentImageIndex[project.id] || 0]}`);
+                            // Fallback to first image if current image fails
+                            if ((currentImageIndex[project.id] || 0) !== 0) {
+                              setCurrentImageIndex(prev => ({ ...prev, [project.id]: 0 }));
+                            }
                           }}
                         />
                       </div>

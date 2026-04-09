@@ -1,0 +1,21 @@
+# humanstxt.org/
+# The humans responsible & technology colophon
+
+# TEAM
+
+    Sagar Adhikari -- Software Engineer & Full Stack Developer
+    Contact: sagradhkr48@gmail.com
+    Twitter: @sagar_adhikari
+    From: Kathmandu, Nepal
+
+# THANKS
+
+    All the open source contributors and the amazing developer community
+
+# TECHNOLOGY COLOPHON
+
+    CSS3, HTML5, JavaScript, TypeScript
+    Next.js, React, Angular, Vue.js
+    Node.js, Express.js, MongoDB, PostgreSQL
+    Tailwind CSS, Framer Motion
+    Vercel, Cloudflare Pages

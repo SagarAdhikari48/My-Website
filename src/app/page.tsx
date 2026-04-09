@@ -10,14 +10,17 @@ import Contact from '@/components/Contact'
 export default function Home() {
   return (
     <>
-      <Hero />
-      <About />
-      <Skills />
-      <Experience />
-      <Services />
-      <Portfolio />
-      <Testimonials />
-      <Contact />
+      {/* SEO-optimized page structure with proper heading hierarchy */}
+      <div itemScope itemType="https://schema.org/Person">
+        <Hero />
+        <About />
+        <Skills />
+        <Experience />
+        <Services />
+        <Portfolio />
+        <Testimonials />
+        <Contact />
+      </div>
     </>
   )
 }

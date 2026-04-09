@@ -43,8 +43,11 @@ const About = () => {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <h2 className="heading-2 text-slate-900 mb-4">About Me</h2>
+          <h2 className="heading-2 text-slate-900 mb-4">About Sagar Adhikari</h2>
           <div className="w-20 h-1 bg-blue-600 mx-auto rounded-full"></div>
+          <p className="text-large text-slate-600 mt-6 max-w-3xl mx-auto">
+            Learn more about Sagar Adhikari, a passionate Software Engineer from Nepal with expertise in full-stack web development
+          </p>
         </motion.div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
@@ -56,7 +59,7 @@ const About = () => {
             viewport={{ once: true }}
             className="space-y-8"
           >
-            
+
             <div className="space-y-6">
               <p className="text-large text-slate-600 leading-relaxed">
                 Software Developer with 7+ years of experience in designing, developing, and testing various
