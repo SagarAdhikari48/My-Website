@@ -10,7 +10,7 @@ const Experience = () => {
       company: 'SearchMed',
       location: 'Remote',
       period: 'September 2024 - Present',
-      website: '#',
+      website: 'https://searchmed.com/',
       description: [
         'Developed and maintained Blazor WebAssembly and Blazor Server applications with modern Tailwind CSS styling, integrating seamlessly with ASP.NET Core 9 backends',
         'Implemented comprehensive API solutions using ASP.NET Core for robust backend functionality and data management',
@@ -27,7 +27,7 @@ const Experience = () => {
       company: 'CustomerFiller',
       location: 'Remote',
       period: 'June 2024 - August 2024',
-      website: '#',
+      website: 'https://www.customfiller.com/',
       description: [
         'Developed CustomerFiller e-commerce platform using Next.js, specializing in aerosol filling solutions with focused product offerings',
         'Implemented secure online payment processing using Stripe integration',
@@ -100,7 +100,7 @@ const Experience = () => {
       company: 'Nirekha Dot Com Private Limited',
       location: 'Onsite',
       period: 'October 2018 - October 2019',
-      website: '#',
+      website: 'https://www.nirekha.com/home',
       description: [
         'Developed Angular-based business registration application for government offices',
         'Created desktop application using Electron for offline functionality',
@@ -115,7 +115,7 @@ const Experience = () => {
       company: 'Channakya Software Pvt Ltd.',
       location: 'Onsite',
       period: 'August 2018 - October 2018',
-      website: '#',
+      website: 'https://channakyasoft.com.np/',
       description: [
         'Completed internship as Full Stack Developer working with Angular frontend and Node.js backend',
         'Developed Visitor Management System using Angular for frontend and Node.js for backend APIs',
