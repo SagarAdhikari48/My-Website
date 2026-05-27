@@ -42,7 +42,7 @@ const Contact = () => {
           from_email: formData.email,
           subject: formData.subject,
           message: formData.message,
-          to_email: 'sagradhkr48@gmail.com',
+          to_email: 'contact@sagaradhikari.info.np',
         },
         process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY || 'your_public_key'
       )
@@ -56,7 +56,7 @@ const Contact = () => {
       }
     } catch (error) {
       console.error('EmailJS error:', error)
-      setError('Failed to send message. Please try again or contact directly at sagradhkr48@gmail.com')
+      setError('Failed to send message. Please try again or contact directly at contact@sagaradhikari.info.np')
     } finally {
       setIsSubmitting(false)
     }
@@ -66,7 +66,7 @@ const Contact = () => {
     {
       icon: Mail,
       title: 'Email',
-      value: 'sagradhkr48@gmail.com',
+      value: 'contact@sagaradhikari.info.np',
       link: '#',
       onClick: openEmailPopup,
       description: 'Send me an email'

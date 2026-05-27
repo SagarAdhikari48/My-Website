@@ -122,7 +122,7 @@ const Footer = () => {
                   className="hover:text-blue-400 transition-colors duration-200"
                   title="Send email to Sagar Adhikari"
                 >
-                  sagradhkr48@gmail.com
+                  contact@sagaradhikari.info.np
                 </button>
               </div>
               <div className="text-slate-300">

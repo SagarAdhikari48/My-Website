@@ -10,7 +10,7 @@ const About = () => {
     { icon: Award, label: 'Degree', value: 'Bachelor in Computer Engineering' },
     { icon: Briefcase, label: 'Experience', value: '7+ Years' },
     { icon: Phone, label: 'Phone', value: '+977 9843650962' },
-    { icon: Mail, label: 'Email', value: 'sagradhkr48@gmail.com' },
+    { icon: Mail, label: 'Email', value: 'contact@sagaradhikari.info.np' },
     { icon: MapPin, label: 'Address', value: 'Kathmandu, Nepal' },
     { icon: Globe, label: 'Freelance', value: 'Available' },
   ]

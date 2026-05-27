@@ -11,7 +11,7 @@ interface EmailPopupProps {
 
 const EmailPopup = ({ isOpen, onClose }: EmailPopupProps) => {
   const [copied, setCopied] = useState(false)
-  const email = 'sagradhkr48@gmail.com'
+  const email = 'contact@sagaradhikari.info.np'
 
   const copyToClipboard = async () => {
     try {

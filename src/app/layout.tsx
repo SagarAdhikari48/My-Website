@@ -129,7 +129,7 @@ export default function RootLayout({
       "https://github.com/Sagar-Adhikari",
       "https://www.linkedin.com/in/sagaradhikari48/",
       "https://www.sagaradhikari.info.np/",
-      "mailto:sagradhkr48@gmail.com"
+      "mailto:contact@sagaradhikari.info.np"
     ],
     "worksFor": {
       "@type": "Organization",
@@ -186,7 +186,7 @@ export default function RootLayout({
       "@type": "PostalAddress",
       "addressCountry": "Nepal"
     },
-    "email": "sagradhkr48@gmail.com",
+    "email": "contact@sagaradhikari.info.np",
     "nationality": {
       "@type": "Country",
       "name": "Nepal"
