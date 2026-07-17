@@ -56,6 +56,17 @@ const Portfolio = () => {
       featured: true
     },
     {
+      id: 7,
+      title: 'Tarangini Foundation - NGO Website',
+      category: 'web',
+      image: '/img/portfolio-3.jpg',
+      description: 'Full NGO website for Tarangini Foundation built with Next.js and a custom Supabase admin panel for team management, blog, resources, and media & coverage — all dynamically managed from the backend.',
+      technologies: ['Next.js', 'Supabase', 'TypeScript', 'Tailwind CSS', 'PostgreSQL'],
+      liveUrl: 'https://tarangini.org.np/',
+      githubUrl: '#',
+      featured: true
+    },
+    {
       id: 3,
       title: 'LeanLaw Frontend Migration',
       category: 'web',

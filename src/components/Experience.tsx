@@ -36,6 +36,21 @@ const Experience = () => {
       technologies: ['Next.js', 'Stripe', 'Supabase', 'TypeScript', 'Tailwind CSS', 'React']
     },
     {
+      title: 'Full Stack Developer (Freelance)',
+      company: 'Tarangini Foundation',
+      location: 'Remote',
+      period: '2024',
+      website: 'https://tarangini.org.np/',
+      description: [
+        'Built the complete website for Tarangini Foundation using Next.js with a fully custom Supabase-powered admin panel',
+        'Developed admin control features including team management, resources, blog management, media & coverage sections',
+        'Implemented dynamic content management so all frontend data is driven from the Supabase backend without redeployment',
+        'Created role-based content publishing workflows for blog posts, news, and announcements',
+        'Designed and developed responsive public-facing pages consuming real-time data from Supabase APIs'
+      ],
+      technologies: ['Next.js', 'Supabase', 'TypeScript', 'Tailwind CSS', 'PostgreSQL', 'React']
+    },
+    {
       title: 'Software Engineer',
       company: 'LeanLaw',
       location: 'Remote',
