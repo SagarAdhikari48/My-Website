@@ -39,12 +39,13 @@ const Experience = () => {
       title: 'Full Stack Developer (Freelance)',
       company: 'Tarangini Foundation',
       location: 'Remote',
-      period: '2024',
+      period: '2026',
       website: 'https://tarangini.org.np/',
       description: [
-        'Built the complete website for Tarangini Foundation using Next.js with a fully custom Supabase-powered admin panel',
+        'Redesigned and rebuilt the existing WordPress website to a modern Next.js application with improved performance and maintainability',
+        'Built a fully custom Supabase-powered admin panel for complete content management without redeployment',
         'Developed admin control features including team management, resources, blog management, media & coverage sections',
-        'Implemented dynamic content management so all frontend data is driven from the Supabase backend without redeployment',
+        'Implemented dynamic content management so all frontend data is driven from the Supabase backend',
         'Created role-based content publishing workflows for blog posts, news, and announcements',
         'Designed and developed responsive public-facing pages consuming real-time data from Supabase APIs'
       ],
