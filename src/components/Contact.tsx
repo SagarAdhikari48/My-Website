@@ -3,7 +3,6 @@
 import { useState } from 'react'
 import { motion } from 'framer-motion'
 import { Mail, Phone, MapPin, Send, CheckCircle, MessageCircle, Clock, Globe } from 'lucide-react'
-import emailjs from '@emailjs/browser'
 import EmailPopup from './EmailPopup'
 import { useEmailPopup } from '@/hooks/useEmailPopup'
 
@@ -32,31 +31,40 @@ const Contact = () => {
     setError('')
 
     try {
-      // Using EmailJS for easy email sending
-      // You'll need to configure these values in your EmailJS account
-      const result = await emailjs.send(
-        process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID || 'your_service_id',
-        process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID || 'your_template_id',
-        {
-          from_name: formData.name,
-          from_email: formData.email,
+      const workerUrl = process.env.NEXT_PUBLIC_CONTACT_WORKER_URL
+      if (!workerUrl) {
+        throw new Error('Contact form is not configured yet.')
+      }
+
+      const res = await fetch(workerUrl, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          name: formData.name,
+          email: formData.email,
           subject: formData.subject,
           message: formData.message,
-          to_email: 'contact@sagaradhikari.info.np',
-        },
-        process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY || 'your_public_key'
-      )
+        }),
+      })
 
-      if (result.status === 200) {
-        setIsSubmitted(true)
-        setFormData({ name: '', email: '', subject: '', message: '' })
-        
-        // Reset success message after 5 seconds
-        setTimeout(() => setIsSubmitted(false), 5000)
+      const data = await res.json()
+
+      if (!res.ok) {
+        throw new Error(data.error || 'Failed to send message.')
       }
-    } catch (error) {
-      console.error('EmailJS error:', error)
-      setError('Failed to send message. Please try again or contact directly at contact@sagaradhikari.info.np')
+
+      setIsSubmitted(true)
+      setFormData({ name: '', email: '', subject: '', message: '' })
+
+      // Reset success message after 5 seconds
+      setTimeout(() => setIsSubmitted(false), 5000)
+    } catch (err) {
+      console.error('Contact form error:', err)
+      setError(
+        err instanceof Error
+          ? err.message
+          : 'Failed to send message. Please try again or contact directly at contact@sagaradhikari.info.np'
+      )
     } finally {
       setIsSubmitting(false)
     }
