@@ -1,25 +1,25 @@
-'use client'
+"use client";
 
-import { useState } from 'react'
+import { useState } from "react";
 
 export const useEmailPopup = () => {
-  const [isEmailPopupOpen, setIsEmailPopupOpen] = useState(false)
+  const [isEmailPopupOpen, setIsEmailPopupOpen] = useState(false);
 
   const openEmailPopup = (e?: React.MouseEvent) => {
     if (e) {
-      e.preventDefault()
-      e.stopPropagation()
+      e.preventDefault();
+      e.stopPropagation();
     }
-    setIsEmailPopupOpen(true)
-  }
+    setIsEmailPopupOpen(true);
+  };
 
   const closeEmailPopup = () => {
-    setIsEmailPopupOpen(false)
-  }
+    setIsEmailPopupOpen(false);
+  };
 
   return {
     isEmailPopupOpen,
     openEmailPopup,
-    closeEmailPopup
-  }
-}
+    closeEmailPopup,
+  };
+};
